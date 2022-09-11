@@ -174,14 +174,9 @@ body{
 
     .signup-container{
 
-        .login-form{
-
-            .login-form-container{
-
-                .form-content{
-                    
-                }
-            }
-        }
+       .login-image{
+            background: url("../images/signup_background.jpg") no-repeat;
+            background-size: cover;
+       }
     }
 }

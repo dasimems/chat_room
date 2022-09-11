@@ -135,4 +135,8 @@ body .login-container .login-form .login-form-container .inline label {
 body .login-container .login-form .login-form-container .inline label {
   font-size: 0.9rem;
   margin-left: 3px;
+}
+body .signup-container .login-image {
+  background: url("../images/signup_background.jpg") no-repeat;
+  background-size: cover;
 }/*# sourceMappingURL=index.css.map */
