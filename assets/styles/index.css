@@ -21,6 +21,7 @@ body a {
   color: #3690ff;
 }
 body .login-container {
+  min-width: 200px;
   width: 50%;
   max-width: 600px;
   min-height: 300px;
@@ -139,4 +140,40 @@ body .login-container .login-form .login-form-container .inline label {
 body .signup-container .login-image {
   background: url("../images/signup_background.jpg") no-repeat;
   background-size: cover;
+}
+@media only screen and (max-width: 1100px) {
+  body .login-container {
+    width: 60%;
+    max-width: 700px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  body .login-container {
+    width: 70%;
+    max-width: 700px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body .login-container {
+    width: 80%;
+    max-width: 700px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body .login-container {
+    width: 90%;
+    max-width: 700px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .login-container {
+    width: 80%;
+    max-width: 700px;
+  }
+  body .login-container .login-image {
+    display: none;
+  }
+  body .login-container .login-form {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */
