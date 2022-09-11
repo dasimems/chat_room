@@ -167,7 +167,7 @@ body .signup-container .login-image {
 }
 @media only screen and (max-width: 600px) {
   body .login-container {
-    width: 80%;
+    width: 87%;
     max-width: 700px;
   }
   body .login-container .login-image {
