@@ -2,4 +2,54 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: url("../images/chat_background.jpg") no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .chat-container {
+  width: 85%;
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+body .chat-container .contact-header {
+  width: 100%;
+  height: 65px;
+  color: white;
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+body .chat-container .contact-header .header-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
+}
+body .chat-container .contact-names,
+body .chat-container .contact-profile {
+  width: 25%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+body .chat-container .chats {
+  width: 50%;
+  height: 100%;
 }/*# sourceMappingURL=chat.css.map */
