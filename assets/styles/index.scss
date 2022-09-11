@@ -8,6 +8,11 @@ html{
     font-size: 16px;
 }
 
+@font-face {
+    font-family: poppins;
+    src: url("../fonts/Poppins-Regular.ttf");
+  }
+
 
 
 
@@ -19,6 +24,7 @@ body{
     min-height: 100vh;
     background: url("../images/index_background.jpg") no-repeat;
     background-size: cover;
+    font-family: poppins;
 
     a{
         text-decoration: none;
