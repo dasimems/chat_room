@@ -121,4 +121,18 @@ body .login-container .login-form .login-form-container .right {
 }
 body .login-container .login-form .login-form-container .center {
   justify-content: center;
+}
+body .login-container .login-form .login-form-container .inline {
+  display: flex;
+  align-items: center;
+}
+body .login-container .login-form .login-form-container .inline input,
+body .login-container .login-form .login-form-container .inline label {
+  display: inline;
+  margin-top: 0px;
+  width: auto;
+}
+body .login-container .login-form .login-form-container .inline label {
+  font-size: 0.9rem;
+  margin-left: 3px;
 }/*# sourceMappingURL=index.css.map */

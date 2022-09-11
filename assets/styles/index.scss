@@ -150,8 +150,38 @@ body{
                 .center{
                     justify-content: center;
                 }
+
+                .inline{
+                    display: flex;
+                    align-items: center;
+
+                    input,
+                    label{
+                        display: inline;
+                        margin-top: 0px;
+                        width: auto;
+                    }
+
+                    label{
+                        font-size: 0.9rem;
+                        margin-left: 3px;
+                    }
+                }
             }
         }
 
+    }
+
+    .signup-container{
+
+        .login-form{
+
+            .login-form-container{
+
+                .form-content{
+                    
+                }
+            }
+        }
     }
 }

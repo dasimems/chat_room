@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chat room</title>
+        <title>Chat room | Sign up</title>
         <meta name="description" content="A chat room build with plain html css, javascript and backend built with python">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/styles/index.css">
@@ -16,12 +16,12 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="login-container">
+        <div class="login-container signup-container">
 
             <div class="login-image">
 
                 <div class="image-overlay">
-
+                    
                 </div>
 
             </div>
@@ -30,40 +30,53 @@
 
                 <form class="login-form-container" >
 
-                    <h1 class="form-header">Login</h1>
+                    <h1 class="form-header">Register</h1>
 
                     <div class="form-content">
 
-                        <label for="login-username">Username</label>
+                        <label for="signup-username">Username</label>
 
-                        <input type="text" class="login-username" id="login-username" placeholder="Your username">
+                        <input type="text" class="signup-username" id="signup-username" placeholder="Your username">
 
                     </div>
 
                     <div class="form-content">
 
-                        <label for="login-password">Password</label>
+                        <label for="signup-password">Password</label>
 
-                        <input type="password" class="login-password" id="login-password" placeholder="Your password">
+                        <input type="password" class="signup-password" id="signup-password" placeholder="Your password">
+
+                    </div>
+
+                    <div class="form-content">
+
+                        <label for="signup-password-two">Repeat Password</label>
+
+                        <input type="password" class="signup-password-two" id="signup-password-two" placeholder="Repeat your password">
 
                     </div>
 
-                    <div class="form-content flex right">
+                    <div class="form-content inline">
 
-                        <a href="./password-reset.html">Forgot password</a>
+                        <input type="checkbox" name="signup-terms" id="signup-terms">
+
+                        <label for="signup-terms">I have read and agree to the <a href="./terms.html">terms and condition</a></label>
+
+                        
 
                     </div>
+
                     
 
                     <div class="form-content">
 
-                        <button type="button" class="login-button" id="login-button" disabled>Sign in</button>
+                        <button type="button" class="login-button" id="login-button" disabled>Sign up</button>
 
                     </div>
 
                     <div class="form-content flex center">
 
-                        <p>New user? <a href="./signup.html">Register</a></p>
+                        <p>Already a user? <a href="./index.html">Login</a></p>
 
                     </div>
 
