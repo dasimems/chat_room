@@ -20,13 +20,52 @@
 
             <div class="login-image">
 
+                <div class="image-overlay">
+                    
+                </div>
+
             </div>
 
             <div class="login-form">
 
-                <form class="login-form" >
+                <form class="login-form-container" >
 
                     <h1 class="form-header">Login</h1>
+
+                    <div class="form-content">
+
+                        <label for="login-username">Username</label>
+
+                        <input type="text" class="login-username" id="login-username" placeholder="Your username">
+
+                    </div>
+
+                    <div class="form-content">
+
+                        <label for="login-password">Password</label>
+
+                        <input type="password" class="login-password" id="login-password" placeholder="Your password">
+
+                    </div>
+
+                    <div class="form-content flex right">
+
+                        <a href="/password-reset.html">Forgot password</a>
+
+                    </div>
+                    
+
+                    <div class="form-content">
+
+                        <button type="button" class="login-button" id="login-button" disabled>Sign in</button>
+
+                    </div>
+
+                    <div class="form-content flex center">
+
+                        <p>New user? <a href="/signup.html">Register</a></p>
+
+                    </div>
 
                 </form>
 
