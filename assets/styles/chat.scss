@@ -337,6 +337,300 @@ body{
             width: 50%;
             height: 100%;
             padding: 0px 20px;
+            position: relative;
+
+            .contact-header{
+
+                .chat-header-details{
+                    display: flex;
+                    align-items: center;
+                    color: rgba(0, 0, 0, .7);
+
+                    .chat-header-image{
+                        position: relative;
+                        // border: 1px solid red;
+                        width: 65px;
+                        height: 55px;
+                        margin-right: 5px;
+
+                        .image{
+                            width: 40px;
+                            height: 40px;
+                            background: white;
+                            position: absolute;
+                            border-radius: 50%;
+                            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+                        }
+
+                        #sender-image{
+                            left: 0px;
+                            top: 0px;
+                        }
+
+                        #receiver-image{
+                            bottom: 0px;
+                            right: 0px;
+                        }
+
+                    }
+
+                    .chat-header-name{
+
+                        h3{
+                            font-weight: bold;
+
+                        }
+
+                        p{
+                            font-size: 0.85rem;
+                            margin: 0px;
+                            display: flex;
+                            align-items: center;
+
+                            span{
+                                display: block;
+
+                            }
+
+
+                            .status{
+                                margin-right: 3px;
+                                width: 6px;
+                                height: 6px;
+                                background: grey;
+                                border-radius: 50%;
+
+                            }
+
+                            #online{
+                                background: green;
+                            }
+
+                            #away{
+                                background: orange;
+                            }
+                        }
+                    }
+                }
+
+                .chat-header-icon{
+
+                    ul{
+                        display: flex;
+                        list-style: none;
+
+                        li{
+                            button{
+                                font-size: 1.5rem;
+                                border: none;
+                                background: transparent;
+                                color: black;
+                                cursor: pointer;
+                            }
+                        }
+
+                        li:not(:first-child){
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+
+            .chat-content{
+                width: 100%;
+                height: calc(100% - 130px);
+                // background: red;
+
+            }
+
+            .chat-form{
+                width: 92%;
+                min-height: 65px;
+                border-top: 2px solid rgba(255, 255, 255, .4);
+                display: flex;
+                align-items: center;
+                position: absolute;
+                left: 50%;
+                bottom: 0px;
+                transform: translateX(-50%);
+                padding: 10px 0px;
+                // border-bottom: 2px solid rgba(255, 255, 255, .4);
+                // background: rgba(0, 0, 0, .2);
+                
+
+                .form-content{
+                    width: 100%;
+                    min-height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 30px;
+                    background: rgba(255, 255, 255, .6);
+                    overflow: hidden;
+                    padding: 0px 7px;
+
+                    button{
+                        width: 30px;
+                        height: 30px;
+                        background: rgba(0, 0, 0, .1);
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        border: none;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+
+                    .input-box{
+
+                        width: calc(100% - 120px);
+                        min-height: 20px;
+                        height: auto;
+                        border: none;
+                        background-color: transparent;
+                        outline: none;
+                        padding: 10px 0px;
+                        font-size: 0.9rem;
+                        font-family: poppins;
+                        color: rgba(0, 0, 0, .8);
+
+                    }
+
+
+                    .input-box:empty:before {
+                        content: attr(data-placeholder);
+                    }
+
+                    textarea{
+                        width: calc(100% - 120px);
+                        min-height: 20px;
+                        height: auto;
+                        border: none;
+                        background-color: transparent;
+                        outline: none;
+                        padding: 10px 0px;
+                        font-size: 0.9rem;
+                        font-family: poppins;
+                        color: rgba(0, 0, 0, .8);
+                    }
+
+                    textarea:focus{
+                        border: none;
+                    }
+
+                }
+            }
+        }
+
+        .contact-profile{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+
+            .profile-image{
+                width: 100px;
+                height: 100px;
+                background: white;
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+                position: relative;
+
+                .status{
+                    width: 10px;
+                    height: 10px;
+                    background: grey;
+                    position: absolute;
+                    border-radius: 50%;
+                    bottom: 5px;
+                    right: 15px;
+                }
+
+                #online{
+                    background: green;
+                }
+
+                #away{
+                    background: orange;
+                }
+            }
+
+            .profile-number{
+                margin-top: 5px;
+            }
+
+            .profile-actions{
+                margin-top: 10px;
+                display: flex;
+
+                button{
+                    font-size: 1.6rem;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                button:not(:first-child){
+                    margin-left: 20px;
+                }
+            }
+
+            .profile-media{
+                width: 100%;
+                height: auto;
+                margin-top: 30px;
+
+                h2{
+                    font-size: 1.3rem;
+                }
+
+                .media-contents{
+                    width: 100%;
+                    height: auto;
+
+                    .media-content-header{
+                        width: 100%;
+                        height: 35px;
+                        margin-top: 10px;
+                        // border-top: 2px solid rgba(255, 255, 255, .3);
+                        // border: 2px solid rgba(255, 255, 255, .3);
+                        display: flex;
+                        border-radius: 50px;
+
+                        button{
+                            width: 33.3%;
+                            background: transparent;
+                            border: none;
+                            cursor: pointer;
+                            border-radius: 20px;
+                            color: rgba(255, 255, 255, .9);
+
+                        }
+
+                        .active{
+                            background: rgba(0, 0, 0, .2);
+                            font-weight: bold;
+                        }
+                    }
+
+                    .media-content-cards{
+                        display: flex;
+                        margin-top: 10px;
+                        flex-wrap: wrap;
+
+                        .media{
+                            width: 32%;
+                            height: 70px;
+                            background: white;
+                            border-radius: 5px;
+                            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+                            margin-right: 1.1%;
+                            margin-bottom: 3px;
+                        }
+                    }
+
+                }
+            }
         }
     }
 
