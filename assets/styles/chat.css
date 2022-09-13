@@ -22,6 +22,25 @@ body {
   font-family: poppins;
   color: white;
 }
+body .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+body .image img {
+  width: 100%;
+  height: auto;
+}
+body .media-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body .media-image img {
+  width: 100%;
+  min-height: 100%;
+}
 body .chat-container {
   width: 85%;
   height: 90vh;
@@ -237,8 +256,8 @@ body .chat-container .contact-chats .contacts-content .contacts .contact-details
   font-size: 0.8rem;
 }
 body .chat-container .contact-chats .contacts-content .contacts .counter {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: green;
   position: absolute;
   right: 20px;
@@ -248,6 +267,7 @@ body .chat-container .contact-chats .contacts-content .contacts .counter {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.9rem;
 }
 body .chat-container .contact-chats .contacts-content .active-chat {
   background: rgba(0, 0, 0, 0.15);
@@ -265,8 +285,11 @@ body .chat-container .contact-profile {
 body .chat-container .chats {
   width: 50%;
   height: 100%;
-  padding: 0px 20px;
   position: relative;
+}
+body .chat-container .chats .contact-header {
+  width: 92%;
+  margin-inline: auto;
 }
 body .chat-container .chats .contact-header .chat-header-details {
   display: flex;
@@ -276,7 +299,7 @@ body .chat-container .chats .contact-header .chat-header-details {
 body .chat-container .chats .contact-header .chat-header-details .chat-header-image {
   position: relative;
   width: 65px;
-  height: 55px;
+  height: 48px;
   margin-right: 5px;
 }
 body .chat-container .chats .contact-header .chat-header-details .chat-header-image .image {
@@ -337,6 +360,105 @@ body .chat-container .chats .contact-header .chat-header-icon ul li:not(:first-c
 body .chat-container .chats .chat-content {
   width: 100%;
   height: calc(100% - 130px);
+  padding: 20px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5);
+  scrollbar-track-color: rgba(0, 0, 0, 0.5);
+}
+body .chat-container .chats .chat-content .chat-details-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text {
+  width: 70%;
+  height: auto;
+  min-height: 50px;
+  margin-top: 2px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text .chat-image {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  background: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text .chat-text-details {
+  max-width: calc(100% - 70px);
+  width: auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 8px;
+  height: auto;
+  position: relative;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text .chat-text-details p {
+  word-break: break-all;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text .chat-text-details .time {
+  font-size: 0.7rem;
+  font-style: italic;
+}
+body .chat-container .chats .chat-content .chat-details-container .chat-text .chat-text-details::after {
+  position: absolute;
+  content: "";
+}
+body .chat-container .chats .chat-content .chat-details-container #receiver-text {
+  align-self: flex-start;
+}
+body .chat-container .chats .chat-content .chat-details-container #receiver-text .chat-image {
+  margin-right: 15px;
+}
+body .chat-container .chats .chat-content .chat-details-container #receiver-text .chat-text-details {
+  background: #dbab8c;
+}
+body .chat-container .chats .chat-content .chat-details-container #receiver-text .chat-text-details::after {
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-right: 20px solid #dbab8c;
+  top: 0px;
+  left: -18px;
+  transform: rotateZ(18deg);
+}
+body .chat-container .chats .chat-content .chat-details-container #sender-text {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+body .chat-container .chats .chat-content .chat-details-container #sender-text .chat-image {
+  margin-left: 15px;
+}
+body .chat-container .chats .chat-content .chat-details-container #sender-text .chat-text-details {
+  background: #349aa2;
+}
+body .chat-container .chats .chat-content .chat-details-container #sender-text .chat-text-details::after {
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 20px solid #349aa2;
+  top: 0px;
+  right: -18px;
+  transform: rotateZ(-18deg);
+}
+body .chat-container .chats .chat-content::-webkit-scrollbar {
+  width: 4px;
+}
+body .chat-container .chats .chat-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+body .chat-container .chats .chat-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+body .chat-container .chats .chat-content::-webkit-scrollbar-corner {
+  border-radius: 5px;
 }
 body .chat-container .chats .chat-form {
   width: 92%;
@@ -496,6 +618,11 @@ body .chat-container .contact-profile .profile-media .media-contents .media-cont
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   margin-right: 1.1%;
   margin-bottom: 3px;
+  overflow: hidden;
+}
+body .chat-container .contact-profile .profile-media .media-contents .media-content-cards .media:hover img {
+  transform: scale(1.15);
+  transition: 0.5s ease all;
 }
 body .chat-container .contact-profile .profile-media .media-contents .empty-content {
   width: 100%;
@@ -523,6 +650,14 @@ body .chat-container .contact-profile .profile-media .media-contents .link-conte
   height: 50px;
   background: white;
   border-radius: 3px;
+  position: relative;
+}
+body .chat-container .contact-profile .profile-media .media-contents .link-contents .links .link-image img {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 body .chat-container .contact-profile .profile-media .media-contents .link-contents .links .link-description {
   width: calc(100% - 60px);
