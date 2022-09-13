@@ -20,12 +20,33 @@
 
         <div class="chat-container">
 
+            <div class="chat-menu">
+
+                <div class="contact-details contact-header-info">
+
+                    <!-- <span class="icon"><i class="fa-regular fa-clock"></i></span> -->
+                    <span class="text">Menu</span>
+
+                </div>
+
+                <ul>
+
+                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-clock"></i></span><span class="text">Recent</span></button></li>
+                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-user-group"></i></span><span class="text">Friends</span></button></li>
+                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="text">Groups</span></button></li>
+                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-cog"></i></span><span class="text">Settings</span></button></li>
+                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-sign-out-alt"></i></span><span class="text">Logout</span></button></li>
+
+                </ul>
+
+            </div>
+
 
             <div class="contact-names">
 
                 <div class="contact-header">
 
-                    <div class="header-button" onclick="openMenu()">
+                    <div class="header-button">
 
                         <div class="open-button">
                             <div class="btn" id="first-btn"></div>
@@ -44,7 +65,7 @@
 
                 </div>
 
-                <div class="contact-details contact-header-info">
+                <div class="contact-details contact-header-info contact-name-header-info">
 
                     <span class="icon"><i class="fa-regular fa-clock"></i></span>
                     <span class="text">Recent chats</span>
@@ -416,9 +437,16 @@
 
                         <button class="add-item"><i class="fa-solid fa-plus"></i></button>
                         <!-- <textarea name="" id="chat-box" name="chat-box" placeholder="Your message..."></textarea> -->
-                        <div class="input-box" contenteditable="true" aria-placeholder="Input message" data-placeholder="Input message"></div>
-                        <button class="emoji-btn"><i class="fa-solid fa-face-smile"></i></button>
-                        <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+
+                        <button class="send-btn other-chat-content"><i class="fa-solid fa-camera"></i></button>
+                        <button class="send-btn other-chat-content"><i class="fa-solid fa-image"></i></button>
+                        <button class="send-btn other-chat-content"><i class="fa-solid fa-video"></i></button>
+                        <button class="send-btn other-chat-content"><i class="fa-solid fa-file-upload"></i></button>
+
+
+                        <div class="input-box default-chat-content" contenteditable="true" aria-placeholder="Input message" data-placeholder="Input message"></div>
+                        <button class="emoji-btn default-chat-content"><i class="fa-solid fa-face-smile"></i></button>
+                        <button class="send-btn default-chat-content"><i class="fa-solid fa-paper-plane"></i></button>
 
                     </div>
 

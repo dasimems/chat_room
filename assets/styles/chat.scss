@@ -57,6 +57,8 @@ body{
         display: flex;
         overflow: hidden;
 
+        
+
         .contact-header{
             width: 100%;
             height: 65px;
@@ -66,6 +68,9 @@ body{
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
+            position: sticky;
+            top: 0px;
+            z-index: 9;
 
             .header-button{
                 width: 35px;
@@ -73,6 +78,7 @@ body{
                 // border: 1px solid green;
                 cursor: pointer;
                 position: relative;
+                overflow: hidden;
                 
                 
 
@@ -83,6 +89,7 @@ body{
                     background: rgba(255, 255, 255, .9);
                     // background: #349aa2;
                     border-radius: 10px;
+                    transition: 0.3s ease all;
                 }
 
                 .open-button,
@@ -113,7 +120,7 @@ body{
 
                 .close-button{
                     // border: 1px solid red;
-                    display: none;
+                    opacity: 0;
 
                     .btn{
                         position: absolute;
@@ -122,13 +129,17 @@ body{
                         transform: translate(-50%, -50%);
                     }
 
+                    
+
                     #first-btn{
-                        
+                        top: 100%;
+                        left: 0%;
                         transform: translate(-50%, -50%) rotateZ(-45deg);
                     }
 
                     #second-btn{
-                        
+                        top: 100%;
+                        left: 100%;
                         transform: translate(-50%, -50%) rotateZ(45deg);
                     }
 
@@ -141,7 +152,6 @@ body{
                 
                 .btn{
                     background: rgba(0, 0, 0, .8);
-                    transition: 1s ease all;
                 }
             }
         }
@@ -149,6 +159,50 @@ body{
         .contact-details{
             padding: 10px 20px;
 
+        }
+
+        .chat-menu{
+            width: 25%;
+            min-width: 270px;
+            max-width: 350px;
+            height: 100%;
+            top: 65px;
+            left: -350px;
+            position: absolute;
+            z-index: 99;
+            background: rgba(0, 0, 0, .6);
+            color: white;
+            transition: 1s ease all;
+
+            ul{
+                list-style: none;
+                // padding: 18px;
+
+                li{
+                    button{
+                        background: transparent;
+                        border: none;
+                        font-size: 1.3rem;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        padding: 20px;
+                        width: 100%;
+                        cursor: pointer;
+
+                        .icon{
+                            margin-right: 5px;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    button:hover{
+                        background: rgba(0, 0, 0, .1);
+                        padding-left: 25px;
+                        transition: 0.5s ease all;
+                    }
+                }
+            }
         }
 
         .contact-header-info{
@@ -160,6 +214,7 @@ body{
             color: rgba(0, 0, 0, .6);
             color: rgba(255, 255, 255, .9);
             font-weight: bold;
+            // display: none;
 
             .icon{
                 margin-right: 10px;
@@ -171,10 +226,21 @@ body{
             }
         }
 
+        .contact-name-header-info{
+            opacity: 1;
+            position: sticky;
+            top: 65px;
+            z-index: 9;
+            backface-visibility: hidden;
+            transition: 1s ease all;
+        }
+
         .contact-chats{
             width: 100%;
             height: calc(100% - 125px);
             // background: red;
+            opacity: 1;
+            transition: 1s ease all;
 
             .empty-chat{
                 padding: 20px;
@@ -339,6 +405,8 @@ body{
                 }
             }
         }
+
+        
 
 
         .contact-names,
@@ -678,6 +746,36 @@ body{
                         border: none;
                     }
 
+                    .default-chat-content{
+                        display: block;
+                    }
+
+                    .other-chat-content{
+                        display: none;
+                        animation: 2s ease forwards;
+                        margin-top: 10px;
+                    }
+
+                    // .other-chat-content{
+
+                    // }
+
+                    @keyframes pushAnimate{
+                        0%{
+                            margin-top: 10px;
+                        }
+
+                        50%{
+                            margin-top: -10px;
+                        }
+
+                        100%{
+                            margin-top: 0px;
+                        }
+                    }
+
+
+
                 }
             }
         }
@@ -793,6 +891,11 @@ body{
                             margin-right: 1.1%;
                             margin-bottom: 3px;
                             overflow: hidden;
+                            cursor: pointer;
+                            
+                            img{
+                                filter: blur(2px);
+                            }
                         }
                         
                         .media:hover{
@@ -800,6 +903,7 @@ body{
                             img{
                                 transform: scale(1.15);
                                 transition: 0.5s ease all;
+                                filter: none;
                             }
                         }
                     }
