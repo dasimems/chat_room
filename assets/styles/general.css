@@ -1,0 +1,44 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+a {
+  text-decoration: none;
+  color: #3690ff;
+}
+
+.message {
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  padding: 2px 10px;
+  z-index: 99;
+  transition: 1s ease all;
+}
+.message p {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+.message .error {
+  background: rgba(255, 0, 0, 0.3);
+}
+.message .success {
+  background: rgba(0, 255, 0, 0.3);
+}/*# sourceMappingURL=general.css.map */

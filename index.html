@@ -12,12 +12,18 @@
         <title>Chat room</title>
         <meta name="description" content="A chat room build with plain html css, javascript and backend built with python">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/styles/general.css">
         <link rel="stylesheet" href="./assets/styles/index.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <!-- <div class="message">
+
+            <p class="error">Wrong Username or password</p>
+
+        </div> -->
         <div class="login-container">
 
             <div class="login-image">
@@ -38,7 +44,7 @@
 
                         <label for="login-username">Username</label>
 
-                        <input type="text" class="login-username" id="login-username" placeholder="Your username">
+                        <input type="text" class="login-username" id="login-username" placeholder="Your username" oninput="checkLoginDetails()">
 
                     </div>
 
@@ -46,7 +52,7 @@
 
                         <label for="login-password">Password</label>
 
-                        <input type="password" class="login-password" id="login-password" placeholder="Your password">
+                        <input type="password" class="login-password" id="login-password" placeholder="Your password" oninput="checkLoginDetails()">
 
                     </div>
 
@@ -76,7 +82,7 @@
             
 
         </div>
-        <script src="./assets/scripts/user.js" async></script>
         <script src="./assets/scripts/index.js" defer></script>
+        <script src="./assets/scripts/user.js" async></script>
     </body>
 </html>
