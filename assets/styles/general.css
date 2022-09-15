@@ -41,4 +41,8 @@ a {
 }
 .message .success {
   background: rgba(0, 255, 0, 0.3);
+}
+
+button {
+  cursor: pointer;
 }/*# sourceMappingURL=general.css.map */

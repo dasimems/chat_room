@@ -344,9 +344,82 @@ body .chat-container .chats {
   height: 100%;
   position: relative;
 }
+body .chat-container .chats .image-show-case {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  color: white;
+  opacity: 0;
+  display: none;
+  transition: 1s ease all;
+}
+body .chat-container .chats .image-show-case .image-show-case-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+body .chat-container .chats .image-show-case .image-show-case-header h1 {
+  font-size: 1.15rem;
+}
+body .chat-container .chats .image-show-case .image-show-case-header button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 1.7rem;
+}
+body .chat-container .chats .image-show-case .image-show-case-content {
+  width: 100%;
+  height: calc(100% - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+body .chat-container .chats .image-show-case .image-show-case-content .loader {
+  font-size: 1.7rem;
+}
+body .chat-container .chats .image-show-case .image-show-case-content img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+}
+body .chat-container .chats .image-show-case .image-show-case-content .image-change-button {
+  font-size: 3.5rem;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: none;
+  color: white;
+  transform: translateY(-50%);
+}
+body .chat-container .chats .image-show-case .image-show-case-content #prev-image-btn {
+  left: 15px;
+}
+body .chat-container .chats .image-show-case .image-show-case-content #next-image-btn {
+  right: 15px;
+}
+body .chat-container .chats .image-show-case .image-show-case-footer {
+  height: 90px;
+  padding: 20px;
+}
+body .chat-container .chats .image-show-case .image-show-case-footer p {
+  font-weight: bold;
+}
+body .chat-container .chats .image-show-case .image-show-case-footer p .present-count {
+  color: rgba(255, 255, 255, 0.7);
+}
 body .chat-container .chats .contact-header {
   width: 92%;
   margin-inline: auto;
+  transition: 1s ease all;
 }
 body .chat-container .chats .contact-header .chat-header-details {
   display: flex;
@@ -422,6 +495,7 @@ body .chat-container .chats .chat-content {
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5);
   scrollbar-track-color: rgba(0, 0, 0, 0.5);
+  transition: 1s ease all;
 }
 body .chat-container .chats .chat-content .chat-details-container {
   width: 100%;
@@ -528,6 +602,7 @@ body .chat-container .chats .chat-form {
   bottom: 0px;
   transform: translateX(-50%);
   padding: 10px 0px;
+  transition: 1s ease all;
 }
 body .chat-container .chats .chat-form .form-content {
   width: 100%;
@@ -548,6 +623,9 @@ body .chat-container .chats .chat-form .form-content button {
   font-size: 1.3rem;
   border: none;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 body .chat-container .chats .chat-form .form-content .input-box {
@@ -585,9 +663,28 @@ body .chat-container .chats .chat-form .form-content .default-chat-content {
 }
 body .chat-container .chats .chat-form .form-content .other-chat-content {
   display: none;
-  -webkit-animation: 2s ease forwards;
-          animation: 2s ease forwards;
+  -webkit-animation: 0.5s ease forwards;
+          animation: 0.5s ease forwards;
   margin-top: 10px;
+  opacity: 0;
+  transition: 1.5s ease all;
+}
+body .chat-container .chats .chat-form .form-content .add-item {
+  position: relative;
+  transition: 0.5s ease all;
+}
+body .chat-container .chats .chat-form .form-content .add-item .icon {
+  display: block;
+  width: 45%;
+  height: 2px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .chat-container .chats .chat-form .form-content .add-item #second-icon {
+  transform: translate(-50%, -50%) rotateZ(90deg);
 }
 @-webkit-keyframes pushAnimate {
   0% {

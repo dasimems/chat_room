@@ -434,9 +434,104 @@ body{
             // padding: 0px 20px;
             position: relative;
 
+            .image-show-case{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: rgba(0, 0, 0, .5);
+                z-index: 999;
+                color: white;
+                opacity: 0;
+                display: none;
+                transition: 1s ease all;
+
+                .image-show-case-header{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    padding: 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 30px;
+                    // border: 1px solid red;
+
+                    h1{
+                        font-size: 1.15rem;
+
+                    }
+
+                    button{
+                        color: white;
+                        background: transparent;
+                        border: none;
+                        font-size: 1.7rem;
+
+                    }
+                }
+
+                .image-show-case-content{
+                    width: 100%;
+                    height: calc(100% - 90px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // background: black;
+                    border-top: 2px solid rgba(255, 255, 255, .3);
+                    border-bottom: 2px solid rgba(255, 255, 255, .3);
+                    position: relative;
+                    
+
+                    .loader{
+                        font-size: 1.7rem;
+                    }
+
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                        opacity: 0;
+                    }
+
+                    .image-change-button{
+                        font-size: 3.5rem;
+                        position: absolute;
+                        top: 50%;
+                        background: transparent;
+                        border: none;
+                        color: white;
+                        transform: translateY(-50%);
+
+                    }
+
+                    #prev-image-btn{
+                        left: 15px;
+                    }
+
+                    #next-image-btn{
+                        right: 15px;
+                    }
+                }
+
+                .image-show-case-footer{
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: flex-start;
+                    height: 90px;
+                    padding: 20px;
+
+
+                    p{
+                        font-weight: bold;
+                        .present-count{
+                            color: rgba(255, 255, 255, .7);
+                        }
+                    }
+                }
+            }
+
             .contact-header{
                 width: 92%;
                 margin-inline: auto;
+                transition: 1s ease all;
 
                 .chat-header-details{
                     display: flex;
@@ -542,6 +637,7 @@ body{
                 scrollbar-color: rgba(0, 0, 0, .5);
                 scrollbar-track-color: rgba(0, 0, 0, .5);
                 // background: red;
+                transition: 1s ease all;
 
                 .chat-details-container{
                     width: 100%;
@@ -683,6 +779,7 @@ body{
                 bottom: 0px;
                 transform: translateX(-50%);
                 padding: 10px 0px;
+                transition: 1s ease all;
                 // border-bottom: 2px solid rgba(255, 255, 255, .4);
                 // background: rgba(0, 0, 0, .2);
                 
@@ -706,7 +803,11 @@ body{
                         font-size: 1.3rem;
                         border: none;
                         border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         cursor: pointer;
+                        // border: 1px solid red;
                     }
 
                     .input-box{
@@ -752,13 +853,36 @@ body{
 
                     .other-chat-content{
                         display: none;
-                        animation: 2s ease forwards;
+                        animation: 0.5s ease forwards;
                         margin-top: 10px;
+                        opacity: 0;
+                        transition: 1.5s ease all;
+                        
                     }
 
                     // .other-chat-content{
 
                     // }
+
+                    .add-item{
+                        position: relative;
+                        transition: 0.5s ease all;
+
+                        .icon{
+                            display: block;
+                            width: 45%;
+                            height: 2px;
+                            background: black;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        #second-icon{
+                            transform: translate(-50%, -50%) rotateZ(90deg);
+                        }
+                    }
 
                     @keyframes pushAnimate{
                         0%{
