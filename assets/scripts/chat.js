@@ -3,7 +3,8 @@
 var docProps = {
     menuOpened: false,
     otherChatOptionOpened: false,
-    mediaBoxOpened: false
+    mediaBoxOpened: false,
+    mediaBoxOpenedNum: 0
 }
 
 window.addEventListener("load", ()=>{
@@ -11,11 +12,15 @@ window.addEventListener("load", ()=>{
         otherThingsButton = document.getElementById("add-item"),
         mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
         showCaseImageCloseButton = document.querySelector(".image-show-case .image-show-case-header #close-image-show-case-btn"),
-        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .total-count");
+        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .total-count"),
+        prevImageBtn = document.getElementById("prev-image-btn"),
+        nextImageBtn = document.getElementById("next-image-btn");
 
     headerButton.addEventListener("click", menu);
     otherThingsButton.addEventListener("click", openContent);
-    showCaseImageCloseButton.addEventListener("click", closeImageShowCase)
+    showCaseImageCloseButton.addEventListener("click", closeImageShowCase);
+    prevImageBtn.addEventListener("click", showPrevImage);
+    nextImageBtn.addEventListener("click", showNextImage);
 
     counterContainer.innerText = mediaImage.length;
 
@@ -218,6 +223,7 @@ function showImageShowCase(imageDir, count){
 
     showCaseContainer.style.display = "block";
     counterContainer.innerText = (count + 1);
+    docProps.mediaBoxOpenedNum = count;
     
     setTimeout(()=>{
         showCaseContainer.style.opacity = "1"
@@ -229,6 +235,8 @@ function showImageShowCase(imageDir, count){
             showCaseLoader.style.opacity = "0";
             showCaseImage.style.opacity = "1";
         })
+
+        // console.log(docProps.mediaBoxOpenedNum);
     }, 50)
 
 
@@ -248,7 +256,10 @@ function closeImageShowCase(){
             showCaseImage.src = "",
             showCaseLoader.style.opacity = "1";
             showCaseImage.style.opacity = "0";
+            docProps.mediaBoxOpenedNum = 0;
         }, 1000)
+
+
 
 }
 
@@ -271,6 +282,88 @@ function showChat(){
         chatHeader.style.opacity = "1";
         chatContent.style.opacity = "1";
         chatForm.style.opacity = "1";
+
+}
+
+function showNextImage(){
+    var mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
+        imageContainer = document.querySelector(".image-show-case .image-show-case-content img"),
+        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .present-count"),
+        newNum = (docProps.mediaBoxOpenedNum  + 1),
+        imageNum = (docProps.mediaBoxOpenedNum + 1),
+        pageNum = (docProps.mediaBoxOpenedNum + 2);
+
+        if(docProps.mediaBoxOpenedNum >= (mediaImage.length - 1)){
+            imageNum = 0;
+            newNum = 0;
+            pageNum = 1;
+
+        }
+
+        if(docProps.mediaBoxOpenedNum === mediaImage.length){
+
+            imageNum = 1;
+            newNum = 1;
+            pageNum = 2;
+
+        }
+
+
+    imageContainer.src = mediaImage[imageNum].src;
+
+    counterContainer.innerText = (pageNum);
+    
+
+    docProps.mediaBoxOpenedNum = parseInt(newNum);
+
+    if((newNum + 1) === (mediaImage.length)){
+        docProps.mediaBoxOpenedNum = -1;
+
+    }
+
+    console.log(newNum);
+
+    
+
+}
+
+function showPrevImage(){
+
+    var mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
+        imageContainer = document.querySelector(".image-show-case .image-show-case-content img"),
+        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .present-count"),
+        newNum = (docProps.mediaBoxOpenedNum  - 1),
+        imageNum = (docProps.mediaBoxOpenedNum - 1),
+        pageNum = docProps.mediaBoxOpenedNum;
+
+        if(docProps.mediaBoxOpenedNum <= 0){
+            imageNum = (mediaImage.length - 1);
+            newNum = (mediaImage.length - 1);
+            pageNum = mediaImage.length;
+
+        }
+        
+        if(docProps.mediaBoxOpenedNum === -1){
+
+            imageNum = (mediaImage.length - 2);
+            newNum = (mediaImage.length - 2);
+            pageNum = (mediaImage.length - 1);
+
+        }
+
+    imageContainer.src = mediaImage[imageNum].src;
+
+    counterContainer.innerText = (pageNum);
+    
+
+    docProps.mediaBoxOpenedNum = parseInt(newNum);
+
+    if(newNum === 0){
+        docProps.mediaBoxOpenedNum = parseInt(mediaImage.length);
+
+    }
+
+    console.log(newNum);
 
 }
 
