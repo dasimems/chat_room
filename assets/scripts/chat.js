@@ -20,7 +20,8 @@ window.addEventListener("load", ()=>{
         prevImageBtn = document.getElementById("prev-image-btn"),
         nextImageBtn = document.getElementById("next-image-btn"),
         chatElement = All(".chat-element"),
-        emojiReaction = All(".reaction-emoji");
+        emojiReaction = All(".reaction-emoji"),
+        emojiOpenBtn = Ele(".emoji-btn");
 
     headerButton.addEventListener("click", menu);
     otherThingsButton.addEventListener("click", openContent);
@@ -98,6 +99,10 @@ window.addEventListener("load", ()=>{
 
         })
 
+    })
+
+    emojiOpenBtn.addEventListener("click", ()=>{
+        hideContextMenu();
     })
 
 
@@ -508,7 +513,15 @@ function showContextMenu(x, y){
 
 function hideContextMenu(){
     var contextMenu = Ele(".chat-context-menu"),
-        contextMenuLinks = All(".chat-context-menu .context-menu ul li")
+        contextMenuLinks = All(".chat-context-menu .context-menu ul li"),
+        chatElement = All(".chat-element");
+
+        chatElement.forEach((element)=>{
+            element.style.background = "transparent";
+        })
+
+        docProps.selectedChats = [];
+        docProps.selectActive = false;
 
         contextMenuLinks.forEach((element, index)=>{
             var timeOutSec = ((index - (contextMenuLinks.length - 1)) * -1)

@@ -675,14 +675,16 @@ body .chat-container .chats .chat-emojis .emoji-search {
 body .chat-container .chats .chat-emojis .emoji-search input {
   height: 100%;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   padding: 0px 10px;
   outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
 body .chat-container .chats .chat-emojis .emoji-search input:focus {
-  border-width: 2px;
-  border-color: black;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 body .chat-container .chats .chat-emojis .emoji-contents {
   width: 100%;

@@ -887,16 +887,17 @@ body{
                     input{
                         height: 100%;
                         width: 100%;
-                        border: 1px solid rgba(0, 0, 0, .3);
+                        border: 1px solid rgba(0, 0, 0, .1);
                         border-radius: 50px;
                         padding: 0px 10px;
                         outline: none;
+                        background: rgba(255, 255, 255, .1);
+                        backdrop-filter: blur(15px);
 
                     }
 
                     input:focus{
-                        border-width: 2px;
-                        border-color: black;
+                        border-color: rgba(0, 0, 0, .3);
                     }
                 }
 
