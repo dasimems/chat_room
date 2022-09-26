@@ -8,11 +8,11 @@ var docProps = {
 }
 
 window.addEventListener("load", ()=>{
-    var headerButton = document.querySelector(".header-button"),
+    var headerButton = Ele(".header-button"),
         otherThingsButton = document.getElementById("add-item"),
-        mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
-        showCaseImageCloseButton = document.querySelector(".image-show-case .image-show-case-header #close-image-show-case-btn"),
-        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .total-count"),
+        mediaImage = All(".media-content-cards .media .media-image img"),
+        showCaseImageCloseButton = Ele(".image-show-case .image-show-case-header #close-image-show-case-btn"),
+        counterContainer = Ele(".image-show-case .image-show-case-footer .stats .total-count"),
         prevImageBtn = document.getElementById("prev-image-btn"),
         nextImageBtn = document.getElementById("next-image-btn");
 
@@ -40,24 +40,22 @@ function menu(){
 
     if(docProps.menuOpened){
         closeMenu();
-        docProps.menuOpened = false;
     }else{
         openMenu();
-        docProps.menuOpened = true;
     }
 
 }
 
 function openMenu(){
-    var openButtonTopIcon = document.querySelectorAll(".open-button #first-btn"),
-        openButtonMiddleicon = document.querySelectorAll(".open-button #second-btn"),
-        openButtonBottomIcon = document.querySelectorAll(".open-button   #third-btn"),
-        closeButton = document.querySelectorAll(".close-button"),
-        closeButtonFirsticon = document.querySelectorAll(".close-button #first-btn"),
-        closeButtonSecondicon = document.querySelectorAll(".close-button #second-btn"),
-        menuContainer = document.querySelector(".chat-menu"),
-        contactNameHeader = document.querySelector(".contact-name-header-info"),
-        contactName = document.querySelector(".contact-chats");
+    var openButtonTopIcon = All(".open-button #first-btn"),
+        openButtonMiddleicon = All(".open-button #second-btn"),
+        openButtonBottomIcon = All(".open-button   #third-btn"),
+        closeButton = All(".close-button"),
+        closeButtonFirsticon = All(".close-button #first-btn"),
+        closeButtonSecondicon = All(".close-button #second-btn"),
+        menuContainer = Ele(".chat-menu"),
+        contactNameHeader = Ele(".contact-name-header-info"),
+        contactName = Ele(".contact-chats");
 
     openButtonTopIcon.forEach(element => {
         element.style.marginLeft = "-100%";
@@ -99,20 +97,21 @@ function openMenu(){
         
 
     }, 400)
+    docProps.menuOpened = true;
 
 }
 
 function closeMenu(){
 
-    var openButtonTopIcon = document.querySelectorAll(".open-button #first-btn"),
-        openButtonMiddleicon = document.querySelectorAll(".open-button #second-btn"),
-        openButtonBottomIcon = document.querySelectorAll(".open-button   #third-btn"),
-        closeButton = document.querySelectorAll(".close-button"),
-        closeButtonFirsticon = document.querySelectorAll(".close-button #first-btn"),
-        closeButtonSecondicon = document.querySelectorAll(".close-button #second-btn"),
-        menuContainer = document.querySelector(".chat-menu"),
-        contactNameHeader = document.querySelector(".contact-name-header-info"),
-        contactName = document.querySelector(".contact-chats");
+    var openButtonTopIcon = All(".open-button #first-btn"),
+        openButtonMiddleicon = All(".open-button #second-btn"),
+        openButtonBottomIcon = All(".open-button   #third-btn"),
+        closeButton = All(".close-button"),
+        closeButtonFirsticon = All(".close-button #first-btn"),
+        closeButtonSecondicon = All(".close-button #second-btn"),
+        menuContainer = Ele(".chat-menu"),
+        contactNameHeader = Ele(".contact-name-header-info"),
+        contactName = Ele(".contact-chats");
 
         
 
@@ -158,12 +157,15 @@ function closeMenu(){
     
     }, 300)
 
+
+    docProps.menuOpened = false;
+
 }
 
 function openContent(){
     var addItemButton = document.getElementById("add-item"),
-        defaultButton = document.querySelectorAll(".default-chat-content"),
-        otherButton = document.querySelectorAll(".other-chat-content");
+        defaultButton = All(".default-chat-content"),
+        otherButton = All(".other-chat-content");
 
     if(docProps.otherChatOptionOpened){
 
@@ -216,14 +218,21 @@ function openContent(){
 }
 
 function showImageShowCase(imageDir, count){
-    var showCaseContainer = document.querySelector(".image-show-case"),
-        showCaseImage = document.querySelector(".image-show-case .image-show-case-content img"),
-        showCaseLoader = document.querySelector(".image-show-case .image-show-case-content .loader"),
-        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .present-count");
+    var showCaseContainer = Ele(".image-show-case"),
+        showCaseImage = Ele(".image-show-case .image-show-case-content img"),
+        showCaseLoader = Ele(".image-show-case .image-show-case-content .loader"),
+        counterContainer = Ele(".image-show-case .image-show-case-footer .stats .present-count"),
+        imageNameContainer = Ele(".image-show-case .image-show-case-header .image-name"),
+        splittedName = imageDir.split("/");
 
     showCaseContainer.style.display = "block";
     counterContainer.innerText = (count + 1);
     docProps.mediaBoxOpenedNum = count;
+
+    imageNameContainer.innerText = splittedName[(splittedName.length - 1)];
+
+    // console.log(splittedName)
+
     
     setTimeout(()=>{
         showCaseContainer.style.opacity = "1"
@@ -244,9 +253,9 @@ function showImageShowCase(imageDir, count){
 
 function closeImageShowCase(){
 
-    var showCaseContainer = document.querySelector(".image-show-case"),
-        showCaseImage = document.querySelector(".image-show-case .image-show-case-content img"),
-        showCaseLoader = document.querySelector(".image-show-case .image-show-case-content .loader");
+    var showCaseContainer = Ele(".image-show-case"),
+        showCaseImage = Ele(".image-show-case .image-show-case-content img"),
+        showCaseLoader = Ele(".image-show-case .image-show-case-content .loader");
 
         showCaseContainer.style.opacity = "0";
         showChat();
@@ -264,9 +273,9 @@ function closeImageShowCase(){
 }
 
 function hideChat(){
-    var chatHeader = document.querySelector(".chats .contact-header"),
-        chatContent = document.querySelector(".chats .chat-content"),
-        chatForm = document.querySelector(".chats .chat-form");
+    var chatHeader = Ele(".chats .contact-header"),
+        chatContent = Ele(".chats .chat-content"),
+        chatForm = Ele(".chats .chat-form");
 
         chatHeader.style.opacity = "0";
         chatContent.style.opacity = "0";
@@ -275,9 +284,9 @@ function hideChat(){
 
 function showChat(){
 
-    var chatHeader = document.querySelector(".chats .contact-header"),
-        chatContent = document.querySelector(".chats .chat-content"),
-        chatForm = document.querySelector(".chats .chat-form");
+    var chatHeader = Ele(".chats .contact-header"),
+        chatContent = Ele(".chats .chat-content"),
+        chatForm = Ele(".chats .chat-form");
 
         chatHeader.style.opacity = "1";
         chatContent.style.opacity = "1";
@@ -286,12 +295,14 @@ function showChat(){
 }
 
 function showNextImage(){
-    var mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
-        imageContainer = document.querySelector(".image-show-case .image-show-case-content img"),
-        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .present-count"),
+    var mediaImage = All(".media-content-cards .media .media-image img"),
+        imageContainer = Ele(".image-show-case .image-show-case-content img"),
+        counterContainer = Ele(".image-show-case .image-show-case-footer .stats .present-count"),
         newNum = (docProps.mediaBoxOpenedNum  + 1),
         imageNum = (docProps.mediaBoxOpenedNum + 1),
-        pageNum = (docProps.mediaBoxOpenedNum + 2);
+        pageNum = (docProps.mediaBoxOpenedNum + 2),
+        imageNameContainer = Ele(".image-show-case .image-show-case-header .image-name"),
+        splittedName;
 
         if(docProps.mediaBoxOpenedNum >= (mediaImage.length - 1)){
             imageNum = 0;
@@ -310,6 +321,8 @@ function showNextImage(){
 
 
     imageContainer.src = mediaImage[imageNum].src;
+    splittedName = mediaImage[imageNum].src.split("/");
+    imageNameContainer.innerText = splittedName[(splittedName.length - 1)];
 
     counterContainer.innerText = (pageNum);
     
@@ -321,7 +334,7 @@ function showNextImage(){
 
     }
 
-    console.log(newNum);
+    // console.log(newNum);
 
     
 
@@ -329,12 +342,14 @@ function showNextImage(){
 
 function showPrevImage(){
 
-    var mediaImage = document.querySelectorAll(".media-content-cards .media .media-image img"),
-        imageContainer = document.querySelector(".image-show-case .image-show-case-content img"),
-        counterContainer = document.querySelector(".image-show-case .image-show-case-footer .stats .present-count"),
+    var mediaImage = All(".media-content-cards .media .media-image img"),
+        imageContainer = Ele(".image-show-case .image-show-case-content img"),
+        counterContainer = Ele(".image-show-case .image-show-case-footer .stats .present-count"),
         newNum = (docProps.mediaBoxOpenedNum  - 1),
         imageNum = (docProps.mediaBoxOpenedNum - 1),
-        pageNum = docProps.mediaBoxOpenedNum;
+        pageNum = docProps.mediaBoxOpenedNum,
+        imageNameContainer = Ele(".image-show-case .image-show-case-header .image-name"),
+        splittedName;
 
         if(docProps.mediaBoxOpenedNum <= 0){
             imageNum = (mediaImage.length - 1);
@@ -352,6 +367,8 @@ function showPrevImage(){
         }
 
     imageContainer.src = mediaImage[imageNum].src;
+    splittedName = mediaImage[imageNum].src.split("/");
+    imageNameContainer.innerText = splittedName[(splittedName.length - 1)]
 
     counterContainer.innerText = (pageNum);
     
@@ -363,7 +380,7 @@ function showPrevImage(){
 
     }
 
-    console.log(newNum);
+    // console.log(newNum);
 
 }
 
