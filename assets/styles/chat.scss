@@ -24,6 +24,100 @@ body{
     font-family: poppins;
     color: white;
 
+    .chat-context-menu{
+        position: absolute;
+        z-index: 99;
+        display: none;
+        opacity: 0;
+        // padding: 15px;
+
+        .context-menu,
+        .context-menu-emoji{
+            display: inline-block;
+            min-width: 100%;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+            color: black;
+            margin-top: 4px;
+
+        }
+        
+        .context-menu-emoji{
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+
+            .emoji-list{
+                display: flex;
+                margin-right: 6px;
+                align-items: center;
+                max-height: 25px;
+
+
+                span{
+                    font-size: 1.5rem;
+                    // width: 25px;
+                    // height: 25px;
+                    cursor: pointer;
+                    margin-right: 6px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    animation: 0.5s ease forwards;
+                }
+            }
+
+            .emoji-add-btn{
+
+                button{
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background: rgba(0, 0, 0, .1);
+                    border: none;
+                    outline: none;
+                }
+            }
+
+        }
+
+
+        .context-menu{
+            
+            ul{
+                list-style: none;
+
+                li{
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    display: flex;
+                    opacity: 0;
+                    transition: 0.5s ease all;
+
+                    .icon{
+                        margin-right: 10px;
+
+                    }
+                }
+
+                li:hover{
+                    background: rgba(0, 0, 0, .1);
+                    transition: 0.5s ease all;
+                    padding-left: 10px;
+
+                    .icon{
+                        margin-left: 5px;
+                        transition: 0.3s ease all;
+                    }
+
+                }
+            }
+        }
+
+    }
+
     .image{
         width: 100%;
         height: 100%;
@@ -287,18 +381,7 @@ body{
 
                 }
 
-                @keyframes animate {
-                    0%{
-                        
-                        transform: translate(-50%, -100%) rotateZ(43deg) scaleX(0);
-                    }
-
-                    100%{
-                        
-                        transform: translate(-50%, -50%) rotateZ(43deg) scaleX(1);
-                    }
-                    
-                }
+                
 
 
 
@@ -631,7 +714,6 @@ body{
             .chat-content{
                 width: 100%;
                 height: calc(100% - 130px);
-                padding: 20px;
                 overflow-y: scroll;
                 scrollbar-width: thin;
                 scrollbar-color: rgba(0, 0, 0, .5);
@@ -644,16 +726,30 @@ body{
                     height: auto;
                     display: flex;
                     flex-direction: column;
+                    position: relative;
+
+
+                    
+
+                    .chat-element{
+                        margin-top: 2px;
+                        width: 100%;
+                        // border: 1px solid red;
+                        // background:rgba(0, 0, 0, .1);
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0px 20px;
+
+                    }
 
                     .chat-text{
                         width: 70%;
                         height: auto;
                         min-height: 50px;
-                        // border: 1px solid red;
-                        margin-top: 2px;
                         display: flex;
                         align-items: flex-start;
                         justify-content: flex-start;
+                        cursor: default;
                         // justify-content: space-between;
     
                         .chat-image{
@@ -976,19 +1072,7 @@ body{
                         }
                     }
 
-                    @keyframes pushAnimate{
-                        0%{
-                            margin-top: 10px;
-                        }
-
-                        50%{
-                            margin-top: -10px;
-                        }
-
-                        100%{
-                            margin-top: 0px;
-                        }
-                    }
+                    
 
 
 
@@ -1226,6 +1310,33 @@ body{
         .contact-profile::-webkit-scrollbar-corner{
             border-radius: 5px;
         }
+    }
+
+    @keyframes pushAnimate{
+        0%{
+            margin-top: 10px;
+        }
+
+        50%{
+            margin-top: -10px;
+        }
+
+        100%{
+            margin-top: 0px;
+        }
+    }
+
+    @keyframes animate {
+        0%{
+            
+            transform: translate(-50%, -100%) rotateZ(43deg) scaleX(0);
+        }
+
+        100%{
+            
+            transform: translate(-50%, -50%) rotateZ(43deg) scaleX(1);
+        }
+        
     }
 
 }

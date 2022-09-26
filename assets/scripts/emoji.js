@@ -227,7 +227,8 @@ function filterEmoji(emojiCategory, emojiList){
 window.addEventListener("load", ()=>{
     var emojiOpenBtn = Ele(".emoji-btn"),
         emojiSearchInput = Ele("#search-emoji"),
-        chatBoxInput = Ele(".input-box");
+        chatBoxInput = Ele(".input-box"),
+        chatElement = All(".chat-element");
 
     getContent({
         link: "./assets/data/emoji.json",
@@ -278,6 +279,13 @@ window.addEventListener("load", ()=>{
     emojiOpenBtn.addEventListener("click", showEmojiContainer);
     emojiSearchInput.addEventListener("input", (e)=>{
         searchEmoji(e.target.value);
+    })
+
+    chatElement.forEach((element)=>{
+        element.addEventListener("click", ()=>{
+            hideContainer();
+        })
+
     })
 
     chatBoxInput.addEventListener("click", hideContainer)

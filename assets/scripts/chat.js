@@ -4,7 +4,11 @@ var docProps = {
     menuOpened: false,
     otherChatOptionOpened: false,
     mediaBoxOpened: false,
-    mediaBoxOpenedNum: 0
+    mediaBoxOpenedNum: 0,
+    selectedChats: [],
+    selectActive: false,
+    contextMenuActive: false,
+    contextMenuTimeout: 10
 }
 
 window.addEventListener("load", ()=>{
@@ -14,7 +18,9 @@ window.addEventListener("load", ()=>{
         showCaseImageCloseButton = Ele(".image-show-case .image-show-case-header #close-image-show-case-btn"),
         counterContainer = Ele(".image-show-case .image-show-case-footer .stats .total-count"),
         prevImageBtn = document.getElementById("prev-image-btn"),
-        nextImageBtn = document.getElementById("next-image-btn");
+        nextImageBtn = document.getElementById("next-image-btn"),
+        chatElement = All(".chat-element"),
+        emojiReaction = All(".reaction-emoji");
 
     headerButton.addEventListener("click", menu);
     otherThingsButton.addEventListener("click", openContent);
@@ -28,7 +34,70 @@ window.addEventListener("load", ()=>{
         images.addEventListener("click", (e)=>{
             // console.log(e.target.src);
             showImageShowCase(e.target.src, index);
+        });
+    })
+
+    window.addEventListener("contextmenu", (e)=>{
+        e.preventDefault();
+
+    })
+
+
+    
+
+    chatElement.forEach((element)=>{
+
+        
+        element.addEventListener("click", (e)=>{
+            // console.dir(element)
+            var posX = (e.x + 10),
+                posY = (e.y + 10);
+
+            // var posX = e.layerX,
+            //     posY = element.offsetTop;
+        
+
+
+            if(props.selectActive){
+
+                docProps.selectedChats.push(element);
+
+            }else{
+
+                docProps.selectedChats = [element];
+
+                
+                if(docProps.contextMenuActive){
+                    chatElement.forEach((el)=>{
+                        el.style.background = "transparent";
+        
+                    })
+
+                    emojiReaction.forEach((element, index) => {
+                        element.style.animationName = "";
+                        element.style.animationDelay = "unset";
+                    })
+                    hideContextMenu();
+                    
+                }else{
+
+                    emojiReaction.forEach((element, index) => {
+                        element.style.animationName = "pushAnimate";
+                        element.style.animationDelay = (0.04 * index) + "s";
+                    })
+                    
+                    element.style.background = "rgba(0, 0, 0, .1)"
+                    showContextMenu(posX, posY);
+                }
+            }
+
+
+
+            // console.log(docProps.selectActive);
+
+
         })
+
     })
 
 
@@ -381,6 +450,94 @@ function showPrevImage(){
     }
 
     // console.log(newNum);
+
+}
+
+function showContextMenu(x, y){
+    var posX = 100,
+        posY = 100,
+        contextMenu = Ele(".chat-context-menu"),
+        contextMenuLinks = All(".chat-context-menu .context-menu ul li");
+
+    if(x){
+        posX = x;
+    }
+
+    if(y){
+        posY = y;
+    }
+
+    contextMenu.style.display = "block";
+
+    if((window.innerHeight - posY ) < contextMenu.clientHeight){
+        posY = posY - (contextMenu.clientHeight + 10);
+    }
+
+    if((window.innerWidth - posX ) < contextMenu.clientWidth){
+        posY = posX - (contextMenu.clientWidth + 10);
+    }
+    // console.dir((window.innerHeight - posY) + ":" + (contextMenu.clientHeight))
+
+    contextMenu.style.top = posY + "px";
+    contextMenu.style.left = posX + "px";
+    contextMenu.style.transition = "0.5s ease all";
+
+    setTimeout(()=>{
+        contextMenu.style.opacity = "1";
+
+        contextMenuLinks.forEach((element, index)=>{
+            setTimeout(()=>{
+                element.style.opacity = "1";
+                // console.log(element);
+                
+            }, (docProps.contextMenuTimeout * index))
+
+        })
+
+        setTimeout(()=>{
+            docProps.contextMenuActive = true;
+
+        }, ((contextMenuLinks.length - 1) * docProps.contextMenuTimeout))
+
+    }, 50)
+
+
+    
+
+}
+
+function hideContextMenu(){
+    var contextMenu = Ele(".chat-context-menu"),
+        contextMenuLinks = All(".chat-context-menu .context-menu ul li")
+
+        contextMenuLinks.forEach((element, index)=>{
+            var timeOutSec = ((index - (contextMenuLinks.length - 1)) * -1)
+            // console.log(timeOutSec)
+            setTimeout(()=>{
+                element.style.opacity = "0";
+                // console.log(element);
+                
+            }, (docProps.contextMenuTimeout * timeOutSec))
+        })
+
+        setTimeout(()=>{
+
+            contextMenu.style.opacity = "0";
+            
+            setTimeout(()=>{
+                
+                contextMenu.style.top = "0px";
+                contextMenu.style.left = "0px";
+                contextMenu.style.display = "none";
+                setTimeout(()=>{
+
+                    contextMenu.removeAttribute("style");
+                    docProps.contextMenuActive = false;
+
+                }, 50)
+            }, 500)
+
+        }, ((contextMenuLinks.length - 1) * docProps.contextMenuTimeout))
 
 }
 
