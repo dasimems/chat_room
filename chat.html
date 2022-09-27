@@ -70,11 +70,11 @@
 
                 <ul>
 
-                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-clock"></i></span><span class="text">Recent</span></button></li>
-                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-user-group"></i></span><span class="text">Friends</span></button></li>
-                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="text">Groups</span></button></li>
-                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-cog"></i></span><span class="text">Settings</span></button></li>
-                    <li><button class="menu-links"><span class="icon"><i class="fa-solid fa-sign-out-alt"></i></span><span class="text">Logout</span></button></li>
+                    <li><button class="menu-links" data-url="recent"><span class="icon"><i class="fa-solid fa-clock"></i></span><span class="text">Recent</span></button></li>
+                    <li><button class="menu-links" data-url="friends"><span class="icon"><i class="fa-solid fa-user-group"></i></span><span class="text">Friends</span></button></li>
+                    <li><button class="menu-links" data-url="groups"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="text">Groups</span></button></li>
+                    <li><button class="menu-links" data-url="settings"><span class="icon"><i class="fa-solid fa-cog"></i></span><span class="text">Settings</span></button></li>
+                    <li><button class="menu-links" data-url="logout"><span class="icon"><i class="fa-solid fa-sign-out-alt"></i></span><span class="text">Logout</span></button></li>
 
                 </ul>
 
@@ -104,150 +104,514 @@
 
                 </div>
 
-                <div class="contact-details contact-header-info contact-name-header-info">
+                <div class="contact-name-contents">
 
-                    <span class="icon"><i class="fa-regular fa-clock"></i></span>
-                    <span class="text">Recent chats</span>
-                    
-                </div>
+                    <div class="contact-name-container recent-chats side-container-recent">
 
-                <div class="contact-chats">
-
-                    <div class="empty-chat">
-
-                        <div class="empty-chat-icon">
-
-
+                        <div class="contact-details contact-header-info contact-name-header-info">
+        
+                            <span class="icon"><i class="fa-regular fa-clock"></i></span>
+                            <span class="text">Recent chats</span>
+                            
                         </div>
-
-                        <p>No available chat at the moment</p>
+        
+                        <div class="contact-chats">
+        
+                            <div class="empty-chat">
+        
+                                <div class="empty-chat-icon">
+        
+        
+                                </div>
+        
+                                <p>No available chat at the moment</p>
+        
+                            </div>
+        
+                            <div class="contacts-content">
+        
+                                <div class="contacts active-chat">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="online"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Duyil Ayomid</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">2</span>
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_1.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+                                        <span class="status" id="away"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Цветаева Юлия</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">2</span>
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_2.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="online"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Дмитрий Евгений</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <!-- <span class="counter">2</span> -->
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_3.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="offline"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Felix Johnson</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">1</span>
+                                    
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
 
                     </div>
 
-                    <div class="contacts-content">
+                    <div class="contact-name-container friend-list side-container-friends">
 
-                        <div class="contacts active-chat">
+                        <div class="contact-details contact-header-info contact-name-header-info">
+        
+                            <div class="friend-search">
+                                <input type="text" class="search-friends" id="search-firends" placeholder="Search..." />
 
-                            <div class="contact-image">
-
-                                <div class="image">
-
-                                    <img src="./assets/images/profile_image.jpg" alt="Duyil's profile image" srcset="">
-
-                                </div>
-
-
-                                <span class="status" id="online"></span>
-
+                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
-                            <div class="contact-details">
-
-                                <div class="details-header">
-                                    <h3>Duyil Ayomid</h3>
-                                    <span class="time">3:45 pm</span>
-
-                                </div>
-
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-                            </div>
-
-                            <span class="counter">2</span>
                             
-
                         </div>
+        
+                        <div class="contact-chats">
+        
+                            <div class="contacts-content search-result">
 
-                        <div class="contacts">
 
-                            <div class="contact-image">
+                                <div class="empty-search-result">
 
-                                <div class="image">
-
-                                    <img src="./assets/images/profile_image_1.jpg" alt="Duyil's profile image" srcset="">
-
-                                </div>
-
-                                <span class="status" id="away"></span>
-
-                            </div>
-                            <div class="contact-details">
-
-                                <div class="details-header">
-                                    <h3>Цветаева Юлия</h3>
-                                    <span class="time">3:45 pm</span>
-
-                                </div>
-
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-                            </div>
-
-                            <span class="counter">2</span>
-                            
-
-                        </div>
-
-                        <div class="contacts">
-
-                            <div class="contact-image">
-
-                                <div class="image">
-
-                                    <img src="./assets/images/profile_image_2.jpg" alt="Duyil's profile image" srcset="">
+                                    <p class="empty-text">Sorry No Result found!</p>
 
                                 </div>
 
 
-                                <span class="status" id="online"></span>
 
                             </div>
-                            <div class="contact-details">
+        
+                            <div class="contacts-content friend-result">
 
-                                <div class="details-header">
-                                    <h3>Дмитрий Евгений</h3>
-                                    <span class="time">3:45 pm</span>
+                                <div class="friend-list-container">
+
+
+                                    <div class="container-title" data-link="friend-request">
+
+
+                                        <h2 class="text">
+
+                                            <span class="title">Friend request</span>
+
+                                            <span class="counter">1</span>
+
+                                        </h2>
+
+                                        <div class="icon">
+
+                                            <span class="open-icon">
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </span>
+
+                                            <span class="close-icon">
+                                                <i class="fa-solid fa-angle-up"></i>
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container-content app-friends-friend-request">
+
+                                        <div class="contacts friend-list-contact">
+        
+                                            <div class="contact-image">
+                
+                                                <div class="image">
+                
+                                                    <img src="./assets/images/profile_image_1.jpg" alt="Duyil's profile image" srcset="">
+                
+                                                </div>
+                
+                                                <span class="status" id="away"></span>
+                
+                                            </div>
+                                            <div class="contact-details">
+                
+                                                <div class="details-header">
+                                                    <h3>Цветаева Юлия</h3>
+                
+                                                </div>
+                                            </div>
+                
+                                            <button class="action-button" data-action="accept" data-id="1">
+                                                Accept
+                                            </button>
+                                            
+                
+                                        </div>
+
+                                    </div>
+
 
                                 </div>
 
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-                            </div>
+                                <div class="friend-list-container">
 
-                            <!-- <span class="counter">2</span> -->
-                            
 
-                        </div>
+                                    <div class="container-title" data-link="friend-list">
 
-                        <div class="contacts">
 
-                            <div class="contact-image">
+                                        <h2 class="text">
 
-                                <div class="image">
+                                            <span class="title">Friends</span>
 
-                                    <img src="./assets/images/profile_image_3.jpg" alt="Duyil's profile image" srcset="">
+                                            <span class="counter">1</span>
+
+                                        </h2>
+
+                                        <div class="icon">
+
+                                            <span class="open-icon">
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </span>
+
+                                            <span class="close-icon">
+                                                <i class="fa-solid fa-angle-up"></i>
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container-content app-friends-friend-list">
+
+                                        <div class="contacts friend-list-contact">
+        
+                                            <div class="contact-image">
+                
+                                                <div class="image">
+                
+                                                    <img src="./assets/images/profile_image_1.jpg" alt="Duyil's profile image" srcset="">
+                
+                                                </div>
+                
+                                                <span class="status" id="away"></span>
+                
+                                            </div>
+                                            <div class="contact-details">
+                
+                                                <div class="details-header">
+                                                    <h3>Цветаева Юлия</h3>
+                
+                                                </div>
+                                            </div>
+
+                                            <button class="action-button" data-action="message" data-id="1">
+                                                Message
+                                            </button>
+                
+                                            
+                                            
+                
+                                        </div>
+
+                                    </div>
+
 
                                 </div>
-
-
-                                <span class="status" id="offline"></span>
-
+        
+                                
+        
                             </div>
-                            <div class="contact-details">
-
-                                <div class="details-header">
-                                    <h3>Felix Johnson</h3>
-                                    <span class="time">3:45 pm</span>
-
-                                </div>
-
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-                            </div>
-
-                            <span class="counter">1</span>
-                            
-
+        
                         </div>
 
                     </div>
 
+                    <div class="contact-name-container group-chat side-container-groups">
+
+                        <div class="contact-details contact-header-info contact-name-header-info">
+        
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Group chats</span>
+                            
+                        </div>
+        
+                        <div class="contact-chats">
+        
+                            <div class="empty-chat">
+        
+                                <div class="empty-chat-icon">
+        
+        
+                                </div>
+        
+                                <p>No available chat at the moment</p>
+        
+                            </div>
+        
+                            <div class="contacts-content">
+        
+                                <div class="contacts active-chat">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="online"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Duyil Ayomid</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">2</span>
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_1.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+                                        <span class="status" id="away"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Цветаева Юлия</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">2</span>
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_2.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="online"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Дмитрий Евгений</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <!-- <span class="counter">2</span> -->
+                                    
+        
+                                </div>
+        
+                                <div class="contacts">
+        
+                                    <div class="contact-image">
+        
+                                        <div class="image">
+        
+                                            <img src="./assets/images/profile_image_3.jpg" alt="Duyil's profile image" srcset="">
+        
+                                        </div>
+        
+        
+                                        <span class="status" id="offline"></span>
+        
+                                    </div>
+                                    <div class="contact-details">
+        
+                                        <div class="details-header">
+                                            <h3>Felix Johnson</h3>
+                                            <span class="time">3:45 pm</span>
+        
+                                        </div>
+        
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                                    </div>
+        
+                                    <span class="counter">1</span>
+                                    
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+
+                    </div>
+
+                    <div class="contact-name-container settings side-container-settings">
+
+                        <div class="contact-details contact-header-info contact-name-header-info">
+        
+                            <span class="icon"><i class="fa-solid fa-cog"></i></span>
+                            <span class="text">Settings</span>
+                            
+                        </div>
+        
+                        <div class="contact-chats">
+        
+                            
+        
+                            <div class="contacts-content">
+        
+                                <div class="contacts settings-contacts" data-link="general">
+
+                                    <p class="settings-title">
+                                        <span class="icon"></span>
+                                        <span class="text">General</span>
+                                    </p>
+                                    
+                                </div>
+
+                                <div class="contacts settings-contacts" data-link="security">
+
+                                    <p class="settings-title">
+                                        <span class="icon"></span>
+                                        <span class="text">Security</span>
+                                    </p>
+                                    
+                                </div>
+        
+                            </div>
+        
+                        </div>
+
+                    </div>
+
+
+
                 </div>
+
 
             </div>
 

@@ -246,6 +246,28 @@ body .chat-container .contact-header-info .icon {
 body .chat-container .contact-header-info .text {
   text-transform: uppercase;
 }
+body .chat-container .contact-name-contents {
+  width: 100%;
+  height: auto;
+  min-height: calc(100% - 65px);
+  transition: 1s ease all;
+}
+body .chat-container .contact-name-contents .contact-name-container {
+  width: 100%;
+  height: auto;
+}
+body .chat-container .contact-name-contents .recent-chats {
+  display: block;
+}
+body .chat-container .contact-name-contents .friend-list {
+  display: none;
+}
+body .chat-container .contact-name-contents .group-chat {
+  display: none;
+}
+body .chat-container .contact-name-contents .settings {
+  display: none;
+}
 body .chat-container .contact-name-header-info {
   opacity: 1;
   position: -webkit-sticky;
@@ -258,7 +280,7 @@ body .chat-container .contact-name-header-info {
 }
 body .chat-container .contact-chats {
   width: 100%;
-  height: calc(100% - 125px);
+  height: auto;
   opacity: 1;
   transition: 1s ease all;
 }
@@ -379,8 +401,110 @@ body .chat-container .contact-chats .contacts-content .contacts .counter {
   align-items: center;
   font-size: 0.9rem;
 }
+body .chat-container .contact-chats .contacts-content .settings-contacts .settings-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+body .chat-container .contact-chats .contacts-content .friend-list-contact {
+  justify-content: flex-start;
+}
+body .chat-container .contact-chats .contacts-content .friend-list-contact .action-button {
+  justify-self: flex-end;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #349aa2;
+  color: white;
+}
 body .chat-container .contact-chats .contacts-content .active-chat {
   background: rgba(0, 0, 0, 0.15);
+}
+body .chat-container .contact-chats .search-result {
+  width: 100%;
+  display: none;
+}
+body .chat-container .contact-chats .search-result .empty-search-result {
+  padding: 50px 0px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+body .chat-container .contact-chats .friend-result {
+  color: black;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title {
+  display: flex;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title .text {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title .text .counter {
+  margin-left: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3px 5px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title .icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title .icon span {
+  position: absolute;
+  font-size: 1.4rem;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-title .icon .close-icon {
+  opacity: 0;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container .container-content {
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s ease all;
+}
+body .chat-container .contact-chats .friend-result .friend-list-container:not(:first-child) {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+body .chat-container .friend-search {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+body .chat-container .friend-search input {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  padding: 0px 10px;
+  padding-right: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+body .chat-container .friend-search input:focus {
+  border-color: rgba(0, 0, 0, 0.55);
+}
+body .chat-container .friend-search button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 body .chat-container .contact-names,
 body .chat-container .contact-profile {

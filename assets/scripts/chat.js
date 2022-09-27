@@ -21,7 +21,9 @@ window.addEventListener("load", ()=>{
         nextImageBtn = document.getElementById("next-image-btn"),
         chatElement = All(".chat-element"),
         emojiReaction = All(".reaction-emoji"),
-        emojiOpenBtn = Ele(".emoji-btn");
+        emojiOpenBtn = Ele(".emoji-btn"),
+        linkButtons = All(".menu-links"),
+        friendListOpenCloseBtn = All(".friend-list-container .container-title");
 
     headerButton.addEventListener("click", menu);
     otherThingsButton.addEventListener("click", openContent);
@@ -36,6 +38,29 @@ window.addEventListener("load", ()=>{
             // console.log(e.target.src);
             showImageShowCase(e.target.src, index);
         });
+    })
+
+    friendListOpenCloseBtn.forEach((element)=>{
+        element.addEventListener("click", ()=>{
+            if(element.hasAttribute("data-link")){
+                var linkName = element.getAttribute("data-link");
+                openFriends(linkName)
+                
+            }
+        })
+    })
+
+    linkButtons.forEach((element)=>{
+        element.addEventListener("click", ()=>{
+            if(element.hasAttribute("data-url")){
+
+                var linkName = element.getAttribute("data-url");
+                openLink(linkName);
+
+
+            }
+
+        })
     })
 
     window.addEventListener("contextmenu", (e)=>{
@@ -120,6 +145,133 @@ function menu(){
 
 }
 
+function openLink(linkName){
+
+    // console.log(linkName);
+    var containers = All(".contact-name-container"),
+        linkContainer,
+        defaultContainer = Ele(".side-container-recent");
+
+
+        
+    if(linkName !== "logout"){
+
+        containers.forEach(element => {
+            element.style.display = "none";
+        })
+
+        linkContainer = Ele(".side-container-" + linkName);
+
+        if(linkContainer){
+            linkContainer.style.display = "block"
+
+        }else{
+            defaultContainer.style.display = "block";
+        }
+    }else{
+
+        window.location = "./index.html";
+
+    }
+
+    closeMenu();
+
+}
+
+function openFriends(friendContainerType){
+    // console.log(friendContainerType);
+
+    var containers = All(".friend-list-container .container-content"),
+    containerTitle = All(".friend-list-container .container-title"),
+        containerToOPenOrClose;
+
+    if(friendContainerType){
+        containerToOPenOrClose = Ele(".friend-list-container .app-friends-" + friendContainerType);
+
+        if(containerToOPenOrClose){
+
+            if(containerToOPenOrClose.clientHeight > 0){
+
+                containerToOPenOrClose.style.height = "0px";
+
+                containerTitle.forEach(element => {
+                    // console.log(element);
+
+                    if(element.getAttribute("data-link") === friendContainerType){
+
+                        var elementChildren = [...element.children];
+
+                        elementChildren.forEach(element => {
+                            var icons = [];
+                            if(element.classList.contains("icon")){
+
+                                icons = [...icons, ...element.children];
+
+                                icons.forEach(ele => {
+                                    ele.style.opacity = "0";
+
+                                    if(ele.classList.contains("open-icon")){
+                                        ele.style.opacity = "1";
+                                    }
+                                })
+
+                                // console.log(icons);
+                            }
+                        })
+                    }
+                })
+
+                
+            }else{
+
+                containerTitle.forEach(element => {
+                    // console.log(element);
+
+                    if(element.getAttribute("data-link") === friendContainerType){
+
+                        var elementChildren = [...element.children];
+
+                        elementChildren.forEach(element => {
+                            var icons = [];
+                            if(element.classList.contains("icon")){
+
+                                icons = [...icons, ...element.children];
+
+                                icons.forEach(ele => {
+                                    ele.style.opacity = "0";
+
+                                    if(ele.classList.contains("close-icon")){
+                                        ele.style.opacity = "1";
+                                    }
+                                })
+
+                                // console.log(icons);
+                            }
+                        })
+                    }
+                })
+                
+                containerToOPenOrClose.style.height = containerToOPenOrClose.scrollHeight + "px";
+            }
+
+            containers.forEach((element)=>{
+
+                
+        
+                if(!element.classList.contains("app-friends-" + friendContainerType)){
+                    
+                    element.style.height = "0px";
+                }
+            })
+        }
+
+        // console.dir(containerToOPenOrClose);
+    }
+
+    
+
+}
+
 function openMenu(){
     var openButtonTopIcon = All(".open-button #first-btn"),
         openButtonMiddleicon = All(".open-button #second-btn"),
@@ -128,8 +280,7 @@ function openMenu(){
         closeButtonFirsticon = All(".close-button #first-btn"),
         closeButtonSecondicon = All(".close-button #second-btn"),
         menuContainer = Ele(".chat-menu"),
-        contactNameHeader = Ele(".contact-name-header-info"),
-        contactName = Ele(".contact-chats");
+        contactNameContainer = Ele(".contact-name-contents");
 
     openButtonTopIcon.forEach(element => {
         element.style.marginLeft = "-100%";
@@ -147,8 +298,7 @@ function openMenu(){
     });
 
     menuContainer.style.left = "0px";
-    contactNameHeader.style.opacity = "0";
-    contactName.style.opacity = "0";
+    contactNameContainer.style.opacity = "0";
 
     setTimeout(()=>{
 
@@ -184,8 +334,7 @@ function closeMenu(){
         closeButtonFirsticon = All(".close-button #first-btn"),
         closeButtonSecondicon = All(".close-button #second-btn"),
         menuContainer = Ele(".chat-menu"),
-        contactNameHeader = Ele(".contact-name-header-info"),
-        contactName = Ele(".contact-chats");
+        contactNameContainer = Ele(".contact-name-contents");
 
         
 
@@ -203,8 +352,7 @@ function closeMenu(){
 
 
         menuContainer.style.left = "-350px";
-        contactNameHeader.style.opacity = "1";
-        contactName.style.opacity = "1";
+        contactNameContainer.style.opacity = "1";
 
         
         setTimeout(()=>{

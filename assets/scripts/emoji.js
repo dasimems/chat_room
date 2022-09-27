@@ -3,7 +3,8 @@
 var props = {
     emojis: [],
     emojiOpened: false,
-    emojiCategories: []
+    emojiCategories: [],
+    keyPressed: []
 }
 
 function showEmojiContainer(){
@@ -290,5 +291,43 @@ window.addEventListener("load", ()=>{
 
     chatBoxInput.addEventListener("click", hideContainer)
     chatBoxInput.addEventListener("keypress", hideContainer)
+
+    
+
+    window.addEventListener("keydown", (e)=>{
+
+        // console.log(e)
+        if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+            e.preventDefault();
+
+            showEmojiContainer();
+
+          }
+
+        // props.keyPressed.push(e.key)
+
+
+        
+    })
+
+    window.addEventListener("keyup", ()=>{
+        if(props.keyPressed.length > 0){
+
+            // console.log(props.keyPressed)
+
+            // if((props.keyPressed.includes("e") || props.keyPressed.includes("E")) && (props.keyPressed.includes("Shift") || props.keyPressed.includes("shift")) && (props.keyPressed.includes("Control") || props.keyPressed.includes("ctrl") || props.keyPressed.includes("control") || props.keyPressed.includes("Command") || props.keyPressed.includes("cmd") || props.keyPressed.includes("command"))){
+            //     console.log("worked")
+
+            // }
+
+            if(evt.keyCode == 69 && evt.altKey){
+                console.log("worked")
+
+            }
+
+        }
+
+        props.keyPressed = [];
+    })
 
 })
