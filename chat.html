@@ -43,13 +43,13 @@
 
                 <ul>
 
-                    <li data-action="copy"><span class="icon"><i class="fa-solid fa-copy"></i></span><span class="text">Copy</span></li>
-                    <li data-action="edit"><span class="icon"><i class="fa-solid fa-pen"></i></span><span class="text">Edit</span></li>
-                    <li data-action="select"><span class="icon"><i class="fa-solid fa-object-ungroup"></i></span><span class="text">Select</span></li>
-                    <li data-action="reply"><span class="icon"><i class="fa-solid fa-reply"></i></span><span class="text">Reply</span></li>
-                    <li data-action="forward"><span class="icon"><i class="fa-solid fa-arrow-turn-right"></i></span><span class="text">Forward</span></li>
-                    <li data-action="report"><span class="icon"><i class="fa-solid fa-flag"></i></span><span class="text">Report</span></li>
-                    <li data-action="delete"><span class="icon"><i class="fa-solid fa-trash-alt"></i></span><span class="text">Delete</span></li>
+                    <li class="context-menu-link" data-action="copy"><span class="icon"><i class="fa-solid fa-copy"></i></span><span class="text">Copy</span></li>
+                    <li class="context-menu-link" data-action="edit"><span class="icon"><i class="fa-solid fa-pen"></i></span><span class="text">Edit</span></li>
+                    <li class="context-menu-link" data-action="select"><span class="icon"><i class="fa-solid fa-object-ungroup"></i></span><span class="text">Select</span></li>
+                    <li class="context-menu-link" data-action="reply"><span class="icon"><i class="fa-solid fa-reply"></i></span><span class="text">Reply</span></li>
+                    <li class="context-menu-link" data-action="forward"><span class="icon"><i class="fa-solid fa-arrow-turn-right"></i></span><span class="text">Forward</span></li>
+                    <li class="context-menu-link" data-action="report"><span class="icon"><i class="fa-solid fa-flag"></i></span><span class="text">Report</span></li>
+                    <li class="context-menu-link" data-action="delete"><span class="icon"><i class="fa-solid fa-trash-alt"></i></span><span class="text">Delete</span></li>
 
                 </ul>
 
@@ -648,54 +648,111 @@
 
                 </div>
 
-                <div class="contact-header">
+                <div class="chat-modal">
 
-                    <div class="chat-header-details">
+                    <div class="chat-modal-content">
 
-                        <div class="chat-header-image">
+                        <p>Are you sure you want to delete this chats?</p>
 
-                            <div class="image" id="sender-image">
+                        <div class="action-btn">
 
-                                <div class="image">
-
-                                    <img src="./assets/images/profile_image_3.jpg" alt="Duyil's profile image" srcset="">
-
-                                </div>
-
-                            </div>
-                            <div class="image" id="receiver-image">
-
-                                <div class="image">
-
-                                    <img src="./assets/images/profile_image.jpg" alt="Duyil's profile image" srcset="">
-
-                                </div>
-
-                            </div>
+                            <button class="accept-btn">Yes</button>
+                            <button class="reject-btn">Cancel</button>
 
                         </div>
-
-                        <div class="chat-header-name">
-                            
-                            <h3>Duyil Ayomid</h3>
-
-                            <p><span class="status" id="online"></span><span class="status-text">online</span></p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="chat-header-icon">
-
-                        <ul>
-                            <li><button><i class="fa-solid fa-phone"></i></button></li>
-                            <li><button><i class="fa-solid fa-video-camera"></i></button></li>
-                            
-                        </ul>
 
                     </div>
 
                 </div>
+
+                <div class="chat-content-header">
+
+                    <div class="contact-header contact-chat-header">
+    
+                        <div class="chat-header-details">
+    
+                            <div class="chat-header-image">
+    
+                                <div class="image" id="sender-image">
+    
+                                    <div class="image">
+    
+                                        <img src="./assets/images/profile_image_3.jpg" alt="Duyil's profile image" srcset="">
+    
+                                    </div>
+    
+                                </div>
+                                <div class="image" id="receiver-image">
+    
+                                    <div class="image">
+    
+                                        <img src="./assets/images/profile_image.jpg" alt="Duyil's profile image" srcset="">
+    
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+                            <div class="chat-header-name">
+                                
+                                <h3>Duyil Ayomid</h3>
+    
+                                <p><span class="status" id="online"></span><span class="status-text">online</span></p>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="chat-header-icon">
+    
+                            <ul>
+                                <li><button data-action="audio-call"><i class="fa-solid fa-phone"></i></button></li>
+                                <li><button data-action="video-call"><i class="fa-solid fa-video-camera"></i></button></li>
+                                <li><button data-action="chat-menu"><span class="open-icon"><i class="fa-solid fa-ellipsis-v"></i></span><span class="close-icon"><i class="fa-solid fa-xmark"></i></span></button></li>
+                                
+                            </ul>
+    
+                        </div>
+
+                        <div class="chat-menu-container">
+
+                            <ul>
+
+                                <li data-action="unfriend"><span class="icon"><i class="fa-solid fa-user-minus"></i></span><span class="text">unfriend</span></li>
+                                <li data-action="block"><span class="icon"><i class="fa-solid fa-ban"></i></span><span class="text">Block</span></li>
+                                <li data-action="report"><span class="icon"><i class="fa-solid fa-flag"></i></span><span class="text">Report</span></li>
+                                <li data-action="delete"><span class="icon"><i class="fa-solid fa-trash-alt"></i></span><span class="text">Delete</span></li>
+
+                            </ul>
+
+                        </div>
+    
+                    </div>
+
+                    <div class="contact-header chat-select-header">
+
+                        <p class="total-chat-selected"><span class="count">1</span><span class="text">Chat Selected</span></p>
+
+                        <div class="chat-select-header-action">
+
+                            <button class="select-header-action-btn" data-action="copy"><i class="fa-solid fa-copy" title="copy"></i></button>
+                            <button class="select-header-action-btn" data-action="forward" title="forward"><i class="fa-solid fa-arrow-turn-right"></i></button>
+                            <button class="select-header-action-btn" data-action="delete" title="delete"><i class="fa-solid fa-trash-alt"></i></button>
+                            <button class="select-header-action-btn" data-action="removeSelectHeader" title="cancel"><i class="fa-solid fa-xmark"></i></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-header chat-settings-header">
+
+                        <p class="settings-title">General</p>
+
+                    </div>
+
+                </div>
+
 
                 <div class="chat-content">
 
@@ -996,6 +1053,15 @@
                     </div>
 
                     
+                </div>
+
+                <div class="chat-reply-edit-content">
+
+                    <button class="cancel-reply-edit"><i class="fa-solid fa-xmark"></i></button>
+
+                    <p class="reply-edit-content-header"><span class="reply-icon"><i class="fa-solid fa-arrow-turn-right"></i></span> <span class="edit-icon"><i class="fa-solid fa-pen"></i></span> <span class="text">Replying to</span></p>
+
+                    <p class="reply-edit-content-message">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora eum beatae exercitationem, iusto odit fuga libero nostrum earum pariatur aut ratione harum quod consequuntur blanditiis excepturi nobis. Eos, ab! Doloremque.</p>
                 </div>
 
                 <div class="chat-form">
